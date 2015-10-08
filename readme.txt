@@ -1,9 +1,10 @@
 Az A-TEAM által létrehozandó feladat rövid leírása:
 
-Projekt címe
+Architektúra:Php Html css
 
 Projekt tagok:
 Niki
 Tiha
 Alex
 Bogi
+
