@@ -15,16 +15,21 @@ Alex
 Bogi
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 Követelmény specifikáció:
 Jól mûködõ belépési és regisztrációs rendszer.
 Adatok feltöltése,tárolása,olvasása és letölthetõségi lehetõség.
 Tagok közötti jegyzetküldési lehetõség létrehozása.
+=======
+>>>>>>> 7c189da52d6edc9a698e760abec732455fda9222
 
 
-Funkcionális specifikáció:
 
 
 
+<<<<<<< HEAD
 Rendszerterv:
 >>>>>>> 7c4634d12d78878d0fbc5504d96ff7263b82ac0a
+=======
+>>>>>>> 7c189da52d6edc9a698e760abec732455fda9222
