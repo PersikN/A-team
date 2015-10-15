@@ -1,4 +1,5 @@
 Követelmény specifikáció:
-Jól mûködõ belépési és regisztrációs rendszer.
+Cél:Egy fõiskolai jegyzetmegosztó oldal létrehozása.
+Regisztrációs és belépési felület megalkotása.
 Adatok feltöltése,tárolása,olvasása és letölthetõségi lehetõség.
 Tagok közötti jegyzetküldési lehetõség létrehozása.
