@@ -1,9 +1,22 @@
 Az A-TEAM által létrehozandó feladat rövid leírása:
 
-Projekt címe
+
+Jegyzetelj!!!!!
 
 Projekt tagok:
 Niki
 Tiha
 Alex
 Bogi
+
+Követelmény specifikáció:
+Jól mûködõ belépési és regisztrációs rendszer.
+Adatok feltöltése,tárolása,olvasása és letölthetõségi lehetõség.
+Tagok közötti jegyzetküldési lehetõség létrehozása.
+
+
+Funkcionális specifikáció:
+
+
+
+Rendszerterv:
