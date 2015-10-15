@@ -11,8 +11,6 @@ Bogi
 
 
 
-Funkcionális specifikáció:
 
 
 
-Rendszerterv:
