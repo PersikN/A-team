@@ -10,4 +10,5 @@ $query="insert into fajlok (nev, fajl)
 	values ('".$_POST['nev']."','"."fajlok/".$safe_filename."')"; 
 mysqli_query($con,$query) or die ("Unsuccesfull".$query);  
 mysqli_close($con);
+echo '<meta http-equiv="refresh" content="0; URL=fomenu.php?d=1">';
 ?>

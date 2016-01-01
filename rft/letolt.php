@@ -5,7 +5,6 @@ $con=connect("root","");
 mysqli_select_db($con,"$dbname");
 $query="select fajl from fajlok where id=".$_POST['id'];
 $result=mysqli_query($con, $query) or die ("Unsuccesful ".$query);
-//echo mysqli_fetch_array($result)[0];
 $file = mysqli_fetch_array($result)[0];
 
 if (file_exists($file)) {
