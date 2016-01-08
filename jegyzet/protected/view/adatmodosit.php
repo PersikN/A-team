@@ -1,8 +1,20 @@
 <?php
+    session_start();
+    if(array_key_exists('modosit', $_POST)){
+        if(Modosit()){
+            echo "Sikeres módosítás!";
+        }
+        else{
+            echo "Sikertelen módosítás!";
+        }
+    }
+?>
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+<form action="" method="POST">
+    
+</form>
+
+<form action="" method="POST">
+    <button type="submit" name="modosit">Módosítás</button>
+</form>
 

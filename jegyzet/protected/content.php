@@ -1,7 +1,7 @@
 <?php
 
 if(!array_key_exists('menu', $_GET)){
-    $tartalomId =1;
+    $tartalomId =0;
 }
 else{
     $tartalomId = $_GET['menu'];
@@ -22,6 +22,6 @@ switch($tartalomId){
         break;
     case 7: include './protected/view/felhasznalokezeles.php';
         break;
-    default: include './protected/view/feltolt.php';
+    default:
         break;
 }

@@ -1,9 +1,13 @@
 <?php
-    include './protected/mydbms.php';
+    include_once './protected/mydbms.php';
     
     if(array_key_exists('torol', $_POST)){
         $fajlId = $_POST['torol'];
+		$fileok=fajlLetolt($fajlId);
+		$file=$fileok[0];
         if(FajlTorol($fajlId)){
+			if(is_file($file))
+			{ unlink($file);}
             echo "A választott fájl sikeresen törlésre került!";
         }
         else{
@@ -37,6 +41,7 @@
     </tbody>
 </table>
 </form>
+<note>
 <form action="" method="POST">
     <button type="submit" name="ossztorol">Összes rekord törlése</button>
 </form>
@@ -50,3 +55,4 @@
         }
     }
 ?>
+</note>

@@ -1,84 +1,85 @@
 body
 {
-	background: #22E976;
+        background-color: #AE0A0A;
 }
 
 #header
 {
 	
-	height: 80px;
+	height: 120px;
 	width: 100%;
-	background: #22E976;
 	
-	
+	background-image: url(../img/cork-board.jpg);
 	text-align: center;
 	
-	color: #0B5E5B;
-	font-family: Comic Sans;
-	font-size: 20px;
+	color: #AE0A0A;
+	font-family: freestyle script;
+	font-size: 40px;
 	line-height: 1.3;
-	font-style: bold, italic;  
+	font-style: bold;  
 	letter-spacing: 3px;
 	
 }
  
 #menu
 {
-	height: 80px;
+	height: 100px;
 	width: 80%;
 	
 	position: absolute;
-    	top: 100px;
-	
+    	top: 150px;
+        float:left;
+        background-position: left;
+	background-color: #AE0A0A;
 	text-align: left;
         
-	color: #0B5E5B;
-	font-family: Comic Sans;
+	font-color: #FF8605;
+	font-family: Comic Sans MS;
 	font-size: 20px;
         font-style: bold;
 	line-height: 2;
 	  
 	letter-spacing: 1px;
-	
 }
 
 #content
 {	
-	height: 100px;
+	height:complex ;
 	width: 80%;
-	margin-left: 80;
+	margin-left: 150;
 	
 	position: absolute;
-    	left: 150px;
-    	top: 100px;
-	
+    	left: 200px;
+    	top: 60px;
+	background: #AE0A0A;
 	text-align: left;
-	background:#22E976;
-	font-family: Comic Sans;
+	font-family: Comic Sans MS;
 	font-size: 20px;
-	font-color: black;
+	font-color: #FF8605;
 	line-height: 1.5;
-	  
 	letter-spacing: 1px;	
+}
+#tablecell
+{
+        font-family: Comic Sans MS;
+        font-color: #FF8605;
 }
  a:link 
 {
-    color: #0B5E5B;
+    color: #FF8605;
 }
 
 a:visited 
 {
-    color: #0B5E5B;
+    color: #FF8605;
 }
 
 a:hover
 {
-    color: black;
+    color: #FF8605;
 }
 
 a:active 
 {
-    color: #0B5E5B;
+    color: #FF8605;
 }
-
-	

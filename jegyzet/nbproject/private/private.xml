@@ -4,9 +4,10 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/wamp/www/jegyzet/protected/view/belepes.php</file>
+            <file>file:/C:/wamp/www/jegyzet/public/css/style.css</file>
             <file>file:/C:/wamp/www/jegyzet/index.php</file>
-            <file>file:/C:/wamp/www/jegyzet/protected/menu.php</file>
-            <file>file:/C:/wamp/www/jegyzet/protected/view/fooldal.php</file>
+            <file>file:/C:/wamp/www/jegyzet/protected/view/regisztracio.php</file>
+            <file>file:/C:/wamp/www/jegyzet/protected/mydbms.php</file>
         </group>
     </open-files>
 </project-private>

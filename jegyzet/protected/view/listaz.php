@@ -2,13 +2,13 @@
 <table border="2">
     <thead>
         <tr>
-            <td>Név</td>
-            <td>Fájl</td>
+            <th>Név</th>
+            <th>Fájl</th>
         </tr>
     </thead>
     <tbody>
         <?php
-            include './protected/mydbms.php';
+            include_once './protected/mydbms.php';
             $fajlok = fajlokLekerdez();
             $fajlokDb = count($fajlok);
             for($i = 0; $i < $fajlokDb;$i++){

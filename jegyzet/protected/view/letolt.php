@@ -1,9 +1,20 @@
 <?php
-    include './protected/mydbms.php';
+    include_once './protected/mydbms.php';
     
     if(array_key_exists('letolt', $_POST)){
         $fajlId = $_POST['letolt'];
-        if(fajlLetolt($fajlId)){
+		$fileok=fajlLetolt($fajlId);
+		$file=$fileok[0];
+        if(file_exists($file)){
+			 header('Content-Description: File Transfer');
+			header('Content-Type: application/octet-stream');
+			header('Content-Disposition: attachment; filename="'.basename($file).'"');
+			header('Expires: 0');
+			header('Cache-Control: must-revalidate');
+			header('Pragma: public');
+			header('Content-Length: ' . filesize($file));
+			readfile($file);
+			exit; 
             echo "A választott fájl sikeresen letöltésre került!";
         }
         else{
