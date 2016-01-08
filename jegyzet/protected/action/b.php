@@ -1,6 +1,6 @@
 <?php
     session_start();    
-    require_once "../mydbms.php";
+    include_once "../mydbms.php";
     $belepett=FelhasznalokLekerdez($_POST['felhasznalo']);
     if(count($belepett)>0)
         {
