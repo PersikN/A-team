@@ -33,17 +33,15 @@ function MenuLekerdez()
     return $menu;
 }
     
-function feltoltes()
+function feltoltes($nev,$fajl)
 {
-    $kapcsolat=kapcsolat();
-    $safe_filename=trim($_FILES['fajl']['name']);  
-    $safe_filename=rand().$safe_filename;  
-    move_uploaded_file($_FILES['fajl']['tmp_name'],"fajlok/".$safe_filename);    
-    $query="insert into fajlok (nev, fajl) 
-	values ('".$_POST['nev']."','"."fajlok/".$safe_filename."')"; 
-    mysqli_query($con,$query) or die ("Unsuccesfull".$query);  
+    $kapcsolat=kapcsolat();   
+    $lekerdezes = $kapcsolat->prepare("INSERT INTO fajlok (nev, fajl) values (:nev, :fajl)");
+	$lekerdezes->bindParam(':nev',$nev);
+	$lekerdezes->bindParam(':fajl',$fajl);
+	$sikeres = $lekerdezes->execute();
     kapcsolatLezar($kapcsolat);
-    return $query;
+    return $sikeres;
 }
 
 function fajlLetolt($fajlId)
