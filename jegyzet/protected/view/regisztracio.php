@@ -2,7 +2,7 @@
         <meta charset="UTF-8">
 </head>
 <?php
-   include_once "../mydbms.php";
+   include_once './protected/mydbms.php';
    if(array_key_exists('ujFelhasznalo', $_POST)){
         $parameterek = [
             'felhasznalo'   =>  $_POST['felhasznalo'],
@@ -22,32 +22,32 @@
         }
     } 
 ?>
-<form action="" method="POST" >
-    <label for="felhasznalo">Felhasználó név:</label>
-    <input type="text" name="felhasznalo" value=""/><br/>
+<form action="" method="POST" ><table border=0>
+    <tr><td><label for="felhasznalo">Felhasználó név:</label></td>
+    <td><input type="text" name="felhasznalo" value=""/></td></tr>
     
-    <label for="jelszo">Jelszó</label>
-    <input type="password" name="jelszo" value=""/><br/>
+    <tr><td><label for="jelszo">Jelszó</label></td>
+    <td><input type="password" name="jelszo" value=""/></td></tr>
     
-    <label for="nev">Név:</label>
-    <input type="text" name="nev" value=""/><br/>
+    <tr><td><label for="nev">Név:</label></td>
+    <td><input type="text" name="nev" value=""/></td></tr>
     
-    <label for="cim">Cím:</label>
-    <input type="text" name="cim" value=""/><br/>
+    <tr><td><label for="cim">Cím:</label></td>
+    <td><input type="text" name="cim" value=""/></td></tr>
     
-    <label for="email">E-mail cím:</label>
-    <input type="text" name="email" value=""/><br/>
+    <tr><td><label for="email">E-mail cím:</label></td>
+    <td><input type="text" name="email" value=""/></td></tr>
     
-    <label for="telefon">Telefon szám:</label>
-    <input type="text" name="telefon" value=""/><br/>
+    <tr><td><label for="telefon">Telefon szám:</label></td>
+    <td><input type="text" name="telefon" value=""/></td></tr>
     
-    <label for="jogosultsag">Jogosultság</label>
-    <select name="jogosultsag">
+    <tr><td><label for="jogosultsag">Jogosultság</label></td>
+    <td><select name="jogosultsag">
     <option value="érték1">1</option>
     <option value="érték2">2</option>
-    </select><br/>
+    </select></td></tr>
     
-    <button type="submit" name="ujFelhasznalo" value="">Regisztrálok!</button>
+    <tr><td></td><td><button type="submit" name="ujFelhasznalo" value="">Regisztrálok!</button></td></tr>
 </form>
 
 

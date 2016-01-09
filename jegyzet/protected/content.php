@@ -22,6 +22,8 @@ switch($tartalomId){
         break;
     case 7: include './protected/view/felhasznalokezeles.php';
         break;
+	case 8: include './protected/view/regisztracio.php';
+        break;
     default:
         break;
 }
