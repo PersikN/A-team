@@ -1,6 +1,6 @@
 <?php
     session_start();    
-    include_once './protected/mydbms.php';
+    include_once '../mydbms.php';
     if(md5($_POST['jelszo']))
 	{
 		$belepett=felhasznaloLekerdez2($_POST['felhasznalo']);	
