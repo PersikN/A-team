@@ -7,9 +7,9 @@
 	}
     if(count($belepett)>0)
         {
-            $_SESSION["id"]=$belepett[0]["id"];
-            $_SESSION["felhasznalo"]=$belepett[0]["felhasznalo"];
-            $_SESSION['jogosultsag']=$belepett[0]["jogosultsag"];
+            $_SESSION["id"]=$belepett["id"];
+            $_SESSION["felhasznalo"]=$belepett["felhasznalo"];
+            $_SESSION['jogosultsag']=$belepett["jogosultsag"];
 			echo '<meta http-equiv="refresh" content="0; URL=../../index.php">';
         }
     else

@@ -107,7 +107,7 @@ function felhasznaloLekerdez2($id)
     $lekerdezes->bindParam(':id',$id);
     $lekerdezes->execute();
     $felhasznalok = $lekerdezes->fetch();
-    var_dump($felhasznalok);
+    //var_dump($felhasznalok);
     kapcsolatLezar($kapcsolat);
     return $felhasznalok;
 }
