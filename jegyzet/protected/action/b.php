@@ -1,7 +1,10 @@
 <?php
     session_start();    
-    include_once "../mydbms.php";
-    $belepett=FelhasznalokLekerdez($_POST['felhasznalo']);
+    include_once './protected/mydbms.php';
+    if(md5($_POST['jelszo']))
+	{
+		$belepett=felhasznaloLekerdez2($_POST['felhasznalo']);	
+	}
     if(count($belepett)>0)
         {
             $_SESSION["id"]=$belepett[0]["id"];
