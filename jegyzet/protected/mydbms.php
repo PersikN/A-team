@@ -98,6 +98,19 @@ function felhasznaloLekerdez($id)
     kapcsolatLezar($kapcsolat);
     return $felhasznalok;
 }
+function felhasznaloLekerdez2($id)
+{
+    $kapcsolat = kapcsolat();
+    $lekerdezes = $kapcsolat->prepare("SELECT id, felhasznalo, jelszo, nev, cim, email, telefon, jogosultsag
+                                       FROM felhasznalok 
+                                       WHERE id = (SELECT id FROM felhasznalok WHERE felhasznalo= :id)");
+    $lekerdezes->bindParam(':id',$id);
+    $lekerdezes->execute();
+    $felhasznalok = $lekerdezes->fetch();
+    var_dump($felhasznalok);
+    kapcsolatLezar($kapcsolat);
+    return $felhasznalok;
+}
         
 function felhasznaloRogzit($parameterek)
 {
