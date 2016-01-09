@@ -2,7 +2,7 @@
         <meta charset="UTF-8">
 </head>
 <?php
-   include_once './protected/mydbms.php';
+   include_once '../mydbms.php';
    if(array_key_exists('ujFelhasznalo', $_POST)){
         $parameterek = [
             'felhasznalo'   =>  $_POST['felhasznalo'],
