@@ -85,16 +85,15 @@ function felhasznalokLekerdez()
     return $felhasznalok;
 }
     
-function felhasznaloLekerdez($id)
+function felhasznaloLekerdez()
 {
     $kapcsolat = kapcsolat();
-    $lekerdezes = $kapcsolat->prepare("SELECT id, felhasznalo, jelszo, nev, cim, email, telefon, jogosultsag
+    $lekerdezes = $kapcsolat->prepare("SELECT id, felhasznalo, jelszo, nev, cim, email, telefon
                                        FROM felhasznalok 
-                                       WHERE id = :id");
-    $lekerdezes->bindParam(':id',$id);
+                                       WHERE felhasznalo = '".$_SESSION['felhasznalo']."'");
     $lekerdezes->execute();
     $felhasznalok = $lekerdezes->fetch();
-    var_dump($felhasznalok);
+    //var_dump($felhasznalok);
     kapcsolatLezar($kapcsolat);
     return $felhasznalok;
 }
@@ -111,13 +110,32 @@ function felhasznaloLekerdez2($id)
     kapcsolatLezar($kapcsolat);
     return $felhasznalok;
 }
-        
+function fajlLekerdez($id)
+{
+    $kapcsolat = kapcsolat();
+    $lekerdezes = $kapcsolat->prepare("SELECT * FROM fajlok WHERE id= :id)");
+    $lekerdezes->bindParam(':id',$id);
+    $lekerdezes->execute();
+    $felhasznalok = $lekerdezes->fetch();
+    //var_dump($felhasznalok);
+    kapcsolatLezar($kapcsolat);
+    return $felhasznalok;
+}            
 function felhasznaloRogzit($parameterek)
 {
     $kapcsolat = kapcsolat();
     $lekerdezes = $kapcsolat->prepare("INSERT INTO felhasznalok (felhasznalo, jelszo, nev, cim, email, telefon, jogosultsag)
                                           VALUES(:felhasznalo, :jelszo, :nev, :cim, :email, :telefon, :jogosultsag)");
    
+    $sqlParameterek = ParameterekElokeszit($parameterek);
+    $sikeres = $lekerdezes->execute($sqlParameterek);
+    kapcsolatLezar($kapcsolat);
+    return $sikeres;
+}
+function felhasznaloModosit($parameterek)
+{
+    $kapcsolat = kapcsolat();
+    $lekerdezes = $kapcsolat->prepare("UPDATE felhasznalok SET jelszo=:jelszo, nev=:nev, cim=:cim, email=:email, telefon=:telefon WHERE felhasznalo='".$_SESSION['felhasznalo']."'");
     $sqlParameterek = ParameterekElokeszit($parameterek);
     $sikeres = $lekerdezes->execute($sqlParameterek);
     kapcsolatLezar($kapcsolat);
