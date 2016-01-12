@@ -11,7 +11,8 @@
 function ell()
 {
 	var felhasznalo=document.getElementById("felhasznalo").value;
-        var jelszo=document.getElementById("jelszo").value;
+    var jelszo=document.getElementById("jelszo").value;
+	
 	if(felhasznalo.length==0 || jelszo.length==0)
 	{
 		alert("Üres mező!");

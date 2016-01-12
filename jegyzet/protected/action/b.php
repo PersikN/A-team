@@ -1,17 +1,22 @@
+<head>
+        <link rel="stylesheet" type="text/css" href="./public/css/style.css">
+        <meta charset="UTF-8">
+</head>
 <?php
     session_start();    
     include_once '../mydbms.php';
-    if(md5($_POST['jelszo']))
+    $felhasznalo=$_POST['felhasznalo'];
+    $jelszo=(md5($_POST['jelszo']));
+    $belepes=belepes($felhasznalo,$jelszo);
+    if(count($belepes)>0)
 	{
-		$belepett=felhasznaloLekerdez2($_POST['felhasznalo']);	
+            $_SESSION["id"]=$belepes["id"];
+            $_SESSION["felhasznalo"]=$belepes["felhasznalo"];
+            $_SESSION["jelszo"]=$belepes["jelszo"];
+            $_SESSION['jogosultsag']=$belepes["jogosultsag"];
+            echo '<meta http-equiv="refresh" content="0; URL=../../index.php">';
+            
 	}
-    if(count($belepett)>0)
-        {
-            $_SESSION["id"]=$belepett["id"];
-            $_SESSION["felhasznalo"]=$belepett["felhasznalo"];
-            $_SESSION['jogosultsag']=$belepett["jogosultsag"];
-			echo '<meta http-equiv="refresh" content="0; URL=../../index.php">';
-        }
     else
         {
             echo "Hibás felhasználó név vagy jelszó!";

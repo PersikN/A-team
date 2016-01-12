@@ -1,3 +1,7 @@
+<head>
+        <link rel="stylesheet" type="text/css" href="./public/css/style.css">
+        <meta charset="UTF-8">
+</head>
 <?php
 include_once "../mydbms.php";
 $safe_filename=trim($_FILES['fajl']['name']);  

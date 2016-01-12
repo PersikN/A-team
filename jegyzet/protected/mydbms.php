@@ -116,11 +116,11 @@ function fajlLekerdez($id)
     $lekerdezes = $kapcsolat->prepare("SELECT * FROM fajlok WHERE id= :id)");
     $lekerdezes->bindParam(':id',$id);
     $lekerdezes->execute();
-    $felhasznalok = $lekerdezes->fetch();
+    $fajl = $lekerdezes->fetch();
     //var_dump($felhasznalok);
     kapcsolatLezar($kapcsolat);
-    return $felhasznalok;
-}            
+    return $fajl;
+}       
 function felhasznaloRogzit($parameterek)
 {
     $kapcsolat = kapcsolat();
@@ -140,6 +140,40 @@ function felhasznaloModosit($parameterek)
     $sikeres = $lekerdezes->execute($sqlParameterek);
     kapcsolatLezar($kapcsolat);
     return $sikeres;
+}
+function belepes($felhasznalo,$jelszo)
+{
+    $kapcsolat = kapcsolat();
+    $lekerdezes=$kapcsolat->prepare("SELECT * FROM felhasznalok WHERE felhasznalo=:felhasznalo AND jelszo=:jelszo");
+    $lekerdezes->bindParam(':felhasznalo',$felhasznalo);
+    $lekerdezes->bindParam(':jelszo',$jelszo);
+    $lekerdezes->execute();
+    $jofelhasznalo=$lekerdezes->fetch();
+    kapcsolatLezar($kapcsolat);
+    return $jofelhasznalo;
+}
+function felhasznaloModosit2($parameterek)
+{
+    $kapcsolat = kapcsolat();
+    $lekerdezes = $kapcsolat->prepare("UPDATE felhasznalok SET jelszo=:jelszo, nev=:nev, cim=:cim, email=:email, telefon=:telefon, jogosultsag=:jogosultsag WHERE felhasznalo=:felhasznalo");
+    
+    $sqlParameterek = ParameterekElokeszit($parameterek);
+    $sikeres = $lekerdezes->execute($sqlParameterek);
+    kapcsolatLezar($kapcsolat);
+    return $sikeres;
+}
+
+function fajlModosit($id,$nev,$fajl)
+{  
+   
+   $kapcsolat = kapcsolat();
+   $lekerdezes = $kapcsolat->prepare("UPDATE fajlok SET nev=:nev, fajl=:fajl WHERE id=:id");
+   $lekerdezes->bindParam(':id',$id);
+   $lekerdezes->bindParam(':nev',$nev);
+   $lekerdezes->bindParam(':fajl',$fajl);
+   $sikeres = $lekerdezes->execute();
+   kapcsolatLezar($kapcsolat);
+   return $sikeres;
 }
 
 ?>

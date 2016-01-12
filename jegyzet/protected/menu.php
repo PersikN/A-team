@@ -1,7 +1,7 @@
 <?php
     include_once './protected/mydbms.php';
     session_start(); 
-    if(isset($_SESSION['jogosultsag']) && $_SESSION['jogosultsag'] <= 2)
+    if(isset($_SESSION['jogosultsag']) && $_SESSION['jogosultsag'] <= 3)
         {
             echo'Üdv, '.$_SESSION['felhasznalo'].'!';
             echo'<br><a href="?act=exit">Kilépés</a><br><br>'; 
@@ -23,9 +23,9 @@
 					echo '<meta http-equiv="refresh" content="0; URL=index.php">';
                 }
         } 
-    else 
+    /* else 
         {
             echo "Hozzáférés megtagadva!";
         }
-    
+     */
 ?>
