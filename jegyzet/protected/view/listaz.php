@@ -4,6 +4,7 @@
         <tr>
             <th>Név</th>
             <th>Fájl</th>
+			<th>Kategória</th>
         </tr>
     </thead>
     <tbody>
@@ -16,6 +17,8 @@
                      
                         <td>'.$fajlok[$i]['nev'].'</td>
                         <td>'.$fajlok[$i]['fajl'].'</td>
+						<td>'.$kategoria[$i]['kategoria'].'</td>
+						
                      </tr>';
             }
         
