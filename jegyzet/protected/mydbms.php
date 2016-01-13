@@ -39,6 +39,7 @@ function feltoltes($nev,$fajl)
     $lekerdezes = $kapcsolat->prepare("INSERT INTO fajlok (nev, fajl) values (:nev, :fajl)");
 	$lekerdezes->bindParam(':nev',$nev);
 	$lekerdezes->bindParam(':fajl',$fajl);
+	$lekerdezes->bindParam(':kategoria',$kategoria);
 	$sikeres = $lekerdezes->execute();
     kapcsolatLezar($kapcsolat);
     return $sikeres;
@@ -59,7 +60,7 @@ function fajlLetolt($fajlId)
 function fajlokLekerdez()
 {
     $kapcsolat = kapcsolat();
-    $lekerdezes = $kapcsolat->prepare("SELECT id, nev, fajl FROM fajlok");
+    $lekerdezes = $kapcsolat->prepare("SELECT id, nev, fajl, kategoria FROM fajlok");
     $lekerdezes->execute();
     $fajlok = $lekerdezes->fetchAll();
     kapcsolatLezar($kapcsolat);
@@ -163,14 +164,15 @@ function felhasznaloModosit2($parameterek)
     return $sikeres;
 }
 
-function fajlModosit($id,$nev,$fajl)
+function fajlModosit($id,$nev,$fajl,$kategoria)
 {  
    
    $kapcsolat = kapcsolat();
-   $lekerdezes = $kapcsolat->prepare("UPDATE fajlok SET nev=:nev, fajl=:fajl WHERE id=:id");
+   $lekerdezes = $kapcsolat->prepare("UPDATE fajlok SET nev=:nev, fajl=:fajl, kategoria=:kategoria WHERE id=:id");
    $lekerdezes->bindParam(':id',$id);
    $lekerdezes->bindParam(':nev',$nev);
    $lekerdezes->bindParam(':fajl',$fajl);
+   $lekerdezes->bindParam(':kategoria',$kategoria);
    $sikeres = $lekerdezes->execute();
    kapcsolatLezar($kapcsolat);
    return $sikeres;
