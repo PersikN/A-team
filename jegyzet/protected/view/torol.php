@@ -33,6 +33,8 @@
                      
                         <td>'.$fajlok[$i]['nev'].'</td>
                         <td>'.$fajlok[$i]['fajl'].'</td>
+						<td>'.$fajlok[$i]['kategoria'].'</td>
+						
                         <td><button type="submit" name="torol" value="'.$fajlok[$i]['id'].'">Törlés</button></td>    
                      </tr>';
             }
