@@ -21,6 +21,7 @@
         <tr>
             <td>Név</td>
             <td>Fájl</td>
+			<td>Kategória</td>			
             <td>Törlés</td>
         </tr>
     </thead>
