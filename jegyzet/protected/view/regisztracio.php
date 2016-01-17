@@ -4,15 +4,15 @@
 <?php
     include_once './protected/mydbms.php';
      if(array_key_exists('ujFelhasznalo', $_POST)){
-        $parameterek = [
-            'felhasznalo'   =>  $_POST['felhasznalo'],
-            'jelszo'   => md5($_POST['jelszo']),
-            'nev'       => $_POST['nev'],
-            'cim'  => $_POST['cim'],
-            'email'   => $_POST['email'],
-            'telefon'   => $_POST['telefon'] ,
-            'jogosultsag' =>"3";
-        ];
+        $parameterek = array (
+         'felhasznalo' => $_POST['felhasznalo'],
+         'jelszo' => md5($_POST['jelszo']),
+         'nev' => $_POST['nev'],
+         'cim' => $_POST['cim'], 
+         'email' => $_POST['email'], 
+         'telefon' => $_POST['telefon'] , 
+         'jogosultsag' =>"3" );
+        
         
         if(felhasznaloRogzit($parameterek)){
             echo "Sikeres regisztráció!";
