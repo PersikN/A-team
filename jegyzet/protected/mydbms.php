@@ -33,17 +33,17 @@ function MenuLekerdez()
     return $menu;
 }
     
-function feltoltes($nev,$fajl)
-{
-    $kapcsolat=kapcsolat();   
-    $lekerdezes = $kapcsolat->prepare("INSERT INTO fajlok (nev, fajl) values (:nev, :fajl)");
-	$lekerdezes->bindParam(':nev',$nev);
-	$lekerdezes->bindParam(':fajl',$fajl);
-	$lekerdezes->bindParam(':kategoria',$kategoria);
-	$sikeres = $lekerdezes->execute();
-    kapcsolatLezar($kapcsolat);
-    return $sikeres;
-}
+function feltoltes($nev,$fajl, $kategoria) {
+    $kapcsolat=kapcsolat(); 
+    $lekerdezes = $kapcsolat->prepare("INSERT INTO fajlok (nev, fajl, kategoria) values (:nev, :fajl, :kategoria)");
+    $lekerdezes->bindParam(':nev',$nev); 
+    $lekerdezes->bindParam(':fajl',$fajl); 
+    $lekerdezes->bindParam(':kategoria',$kategoria); 
+    $sikeres = $lekerdezes->execute(); 
+    kapcsolatLezar($kapcsolat); 
+    
+    return $sikeres; }
+
 
 function fajlLetolt($fajlId)
 {
