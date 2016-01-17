@@ -25,13 +25,20 @@ SET time_zone = "+00:00";
 --
 -- Tábla szerkezet ehhez a táblához `fajlok`
 --
+CREATE TABLE IF NOT EXISTS `felhasznalok` (
+ `id` int(11) NOT NULL AUTO_INCREMENT, `felhasznalo` varchar(255)
+  COLLATE utf8_hungarian_ci DEFAULT NULL, `jelszo` varchar(255)
+  COLLATE utf8_hungarian_ci DEFAULT NULL, `nev` varchar(255)
+  COLLATE utf8_hungarian_ci DEFAULT NULL, `cim` varchar(255)
+  COLLATE utf8_hungarian_ci DEFAULT NULL, `email` varchar(255)
+  CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL, `telefon` varchar(24) 
+  COLLATE utf8_hungarian_ci DEFAULT NULL, `jogosultsag` varchar(255)
+  COLLATE utf8_hungarian_ci DEFAULT NULL, 
+  PRIMARY KEY (`id`) ) ENGINE=InnoDB DEFAULT CHARSET=utf8 
+  COLLATE=utf8_hungarian_ci AUTO_INCREMENT=1;
 
-CREATE TABLE IF NOT EXISTS `fajlok` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nev` varchar(255) COLLATE utf8_hungarian_ci DEFAULT NULL,
-  `fajl` varchar(255) COLLATE utf8_hungarian_ci DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci AUTO_INCREMENT=3 ;
+   
+
 
 --
 -- A tábla adatainak kiíratása `fajlok`
