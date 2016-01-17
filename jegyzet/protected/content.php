@@ -6,7 +6,7 @@ if(!array_key_exists('menu', $_GET)){
 else{
     $tartalomId = $_GET['menu'];
 }
-
+if($_SESSION['id'] > 0) {
 switch($tartalomId){
     case 1: include './protected/view/feltolt.php';
         break;
@@ -26,4 +26,5 @@ switch($tartalomId){
         break;
     default:
         break;
+        }
 }
