@@ -28,6 +28,7 @@
         <tr>
             <td>Név</td>
             <td>Fájl</td>
+			<td>Kategória</td>
             <td>Letöltés</td>
         </tr>
     </thead>
@@ -40,6 +41,8 @@
                      
                         <td>'.$fajlok[$i]['nev'].'</td>
                         <td>'.$fajlok[$i]['fajl'].'</td>
+						<td>'.$fajlok[$i]['kategoria'].'</td>
+						
                         <td><button type="submit" name="letolt" value="'.$fajlok[$i]['id'].'">Letölt</button></td>    
                      </tr>';
             }
